@@ -43,17 +43,15 @@ const Siderbar = () => {
 
     ]
 
-    console.log(selected)
-
     return (
-        <div className='shadow-xl shadow-blue-200 h-screen flex flex-col pt-6 w-52 items-center justify-between'>
+        <div className='shadow-xl shadow-gray-200 h-screen min-md:flex md:relative flex-col pt-6 min-w-52 items-center justify-between fixed left-0 top-0 -translate-x-full z-[999] md:translate-x-0 '>
 
             <div>
                 {/* for title and logo */}
                 <div className='flex items-center gap-2 pl-3 cursor-pointer'>
                     <IoLogoAmplify className='text-xl' />
                     <span className='text-2xl'>
-                        Wealthify
+                        SpendWise
                     </span>
                 </div>
                 {/* Navigate buttons div */}
@@ -68,8 +66,8 @@ const Siderbar = () => {
 
             <footer className=' h-40 flex flex-col items-start pt-2 w-full'>
 
-                <div className='hover:bg-gray-100 shadow-purple-50 hover:shadow w-full'>
-                    <button className='flex items-center w-full pl-7 py-2 gap-2 text-slate-800 hover:text-slate-950 cursor-pointer'>
+                <div className='hover:bg-gray-100 shadow-purple-50 hover:shadow w-full opacity-70 hover:opacity-100 duration-200'>
+                    <button className='flex items-center w-full pl-6 py-2 gap-2 text-slate-800 hover:text-slate-950 cursor-pointer'>
                         <IoAlertCircleOutline className='text-xl' />
                         <span className='text-lg'>
                             Help
@@ -77,8 +75,8 @@ const Siderbar = () => {
                     </button>
                 </div>
 
-                <div className='hover:bg-gray-100 shadow-purple-50 hover:shadow w-full'>
-                    <button className='flex items-center gap-2 pl-7 py-2 text-slate-800 hover:text-slate-950 cursor-pointer '>
+                <div className='hover:bg-gray-100 shadow-purple-50 hover:shadow w-full opacity-80 hover:opacity-100'>
+                    <button className='flex items-center gap-2 pl-6 py-2 text-slate-800 duration-200 hover:text-slate-950 cursor-pointer '>
                         <IoSettingsOutline className='text-xl' />
                         <span className='text-lg'>
                             Settings
@@ -86,10 +84,10 @@ const Siderbar = () => {
                     </button>
                 </div>
 
-                <div className='flex group items-center pl-2 pt-2 border border-transparent border-t-slate-200 w-full cursor-pointer hover:bg-slate-100 duration-200 '>
+                <div className='flex group items-center pl-2 h-full pt-1 border border-transparent border-t-slate-200 w-full cursor-pointer hover:bg-slate-100 duration-200 '>
 
                     <div className='w-10 pt-[2px]'>
-                        <img class="inline-block size-9 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
+                        <img class="inline-block size-9 rounded-full ring-2 ring-white" src="https://img.freepik.com/premium-photo/3d-avatar-boy-character_914455-603.jpg" alt="" />
                     </div>
                     <div className='flex items-start flex-col pl-2 pt-1'>
                         <span className='text-[16px] font-medium'>
