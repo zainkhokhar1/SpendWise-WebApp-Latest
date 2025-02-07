@@ -44,13 +44,13 @@ const Siderbar = () => {
     ]
 
     return (
-        <div className='shadow-xl shadow-gray-200 h-screen min-md:flex md:relative flex-col pt-6 min-w-52 items-center justify-between fixed left-0 top-0 -translate-x-full z-[999] md:translate-x-0 '>
+        <div className='shadow-xl shadow-gray-200 h-screen min-md:flex md:fixed flex-col pt-6 min-w-52 max-w-52 overflow-hidden items-center justify-between fixed left-0 top-0 -translate-x-full z-[999] md:translate-x-0 '>
 
             <div>
                 {/* for title and logo */}
                 <div className='flex items-center gap-2 pl-3 cursor-pointer'>
                     <IoLogoAmplify className='text-xl' />
-                    <span className='text-2xl'>
+                    <span className='text-2xl font-semibold '>
                         SpendWise
                     </span>
                 </div>
@@ -68,8 +68,8 @@ const Siderbar = () => {
 
                 <div className='hover:bg-gray-100 shadow-purple-50 hover:shadow w-full opacity-70 hover:opacity-100 duration-200'>
                     <button className='flex items-center w-full pl-6 py-2 gap-2 text-slate-800 hover:text-slate-950 cursor-pointer'>
-                        <IoAlertCircleOutline className='text-xl' />
-                        <span className='text-lg'>
+                        <IoAlertCircleOutline className='text-lg' />
+                        <span className='text-md'>
                             Help
                         </span>
                     </button>
@@ -77,8 +77,8 @@ const Siderbar = () => {
 
                 <div className='hover:bg-gray-100 shadow-purple-50 hover:shadow w-full opacity-80 hover:opacity-100'>
                     <button className='flex items-center gap-2 pl-6 py-2 text-slate-800 duration-200 hover:text-slate-950 cursor-pointer '>
-                        <IoSettingsOutline className='text-xl' />
-                        <span className='text-lg'>
+                        <IoSettingsOutline className='text-lg' />
+                        <span className='text-md'>
                             Settings
                         </span>
                     </button>
@@ -90,10 +90,10 @@ const Siderbar = () => {
                         <img class="inline-block size-9 rounded-full ring-2 ring-white" src="https://img.freepik.com/premium-photo/3d-avatar-boy-character_914455-603.jpg" alt="" />
                     </div>
                     <div className='flex items-start flex-col pl-2 pt-1'>
-                        <span className='text-[16px] font-medium'>
+                        <span className='text-[14px] line-clamp-1 w-28'>
                             Zain ul Abideen
                         </span>
-                        <span className='text-sm'>
+                        <span className='text-sm w-28 line-clamp-1'>
                             zain@gmail.com
                         </span>
                     </div>

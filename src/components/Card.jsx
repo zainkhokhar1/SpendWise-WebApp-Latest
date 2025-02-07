@@ -20,6 +20,7 @@ const Card = () => {
                         $30,192.98
                     </span>
                 </span>
+
             </div>
 
             {/* graph showing section  */}

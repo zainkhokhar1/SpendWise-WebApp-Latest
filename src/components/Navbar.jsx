@@ -9,7 +9,7 @@ const Navbar = () => {
         <div className='min-w-full flex items-center justify-between py-5'>
 
             <div className='flex flex-col gap-[1px]'>
-                <span className='font-black md:text-xl max-[350px]:text-sm'>
+                <span className='font-semibold md:text-xl max-[350px]:text-sm'>
                     Good Morning, Muhammad Zain
                 </span>
                 <span className='md:text-sm text-xs text-slate-700 hover:text-slate-800 duration-100'>
