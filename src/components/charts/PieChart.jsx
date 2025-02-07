@@ -4,7 +4,7 @@ import * as echarts from 'echarts';
 import { useEffect } from 'react';
 
 
-const PieChart = () => {
+const PieChart = ({ data }) => {
     const chartReference = useRef(null);
 
     // Pie chart options here
@@ -19,7 +19,7 @@ const PieChart = () => {
             },
             tooltip: {
                 trigger: 'item',
-                formatter: '{a} <br/>{b} : {c} ({d}%)'
+                formatter: '{a} <br/>{b} : {c}\n ({d}%)'
             },
             legend: {
                 bottom: 50,
@@ -30,32 +30,37 @@ const PieChart = () => {
             series: [
                 {
                     type: 'pie',
-                    radius: '70%',
+                    // radius: '70%',
                     center: ['50%', '50%'],
                     selectedMode: 'single',
-                    data: [
-                        {
-                            value: 210,
-                            name: 'Groceries',
-                            itemStyle: {
-                                color: '#4B535A'
-                            }
-                        },
-                        {
-                            value: 100,
-                            name: 'Education 25%',
-                            itemStyle: {
-                                color: '#6FD6FA'
-                            }
-                        },
-                        {
-                            value: 434,
-                            name: 'Housing',
-                            itemStyle: {
-                                color: '#5583D6'
+                    label: {
+                        show: true,
+                        position: 'outside',
+                        fontSize: 11,
+                        formatter: [
+                            '{nameStyle|{b}}\n',  // First line: Name
+                            '{percentStyle|{d}%}' // Second line: Percentage with different color
+                        ].join(''),
+                        rich: {
+                            nameStyle: {
+                                fontSize: 11,
+                                color: '#333',  // Color for the name (black)
+                                fontWeight: 'bold'
+                            },
+                            percentStyle: {
+                                fontSize: 12,
+                                color: '#6478A3',
                             }
                         }
-                    ],
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: function (params) {
+                            return `${params.name}:  ${params.value}`;
+                        }
+                    },
+
+                    data: data,
                     emphasis: {
                         itemStyle: {
                             shadowBlur: 10,
@@ -67,12 +72,13 @@ const PieChart = () => {
             ]
         };
 
+
         chart.setOption(option);
 
         return () => chart.dispose();
-    }, [])
+    }, [data])
 
-    return <div ref={chartReference} className="w-full h-full"></div>;
+    return <div ref={chartReference} className="w-full h-60"></div>;
 }
 
 export default PieChart;
