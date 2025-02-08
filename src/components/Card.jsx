@@ -5,7 +5,7 @@ import CardChart from './charts/CardChart';
 
 const Card = () => {
     return (
-        <div className=' flex h-32 px-4 py-[3px] bg-white max-[1330px]:col-span-6 max-[840px]:col-span-6 min-lg:col-span-2 col-span-6 rounded-md hover:shadow shadow-gray-100 duration-200 cursor-pointer'>
+        <div className=' flex justify-baseline h-32 pl-4 py-[3px] bg-white max-[1330px]:col-span-6 max-[840px]:col-span-6 min-lg:col-span-2 col-span-6 rounded-md hover:shadow shadow-gray-100 duration-200 cursor-pointer'>
 
             <div className='w-1/2 flex flex-col h-full justify-between py-2 '>
 
@@ -25,7 +25,7 @@ const Card = () => {
             </div>
 
             {/* graph showing section  */}
-            <section className='w-full min-h-full'>
+            <section className='w-full min-h-32 pt-16'>
                 <CardChart />
             </section>
 
