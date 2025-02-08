@@ -43,10 +43,19 @@ const FinancialChart = () => {
     };
 
     chart.setOption(option);
-    // return () => chart.dispose();
+
+    const resizeChart = () => chart.resize();
+    window.addEventListener('resize', resizeChart);
+
+    return () => {
+      window.removeEventListener('resize', resizeChart);
+      chart.dispose();
+    };
+
+    return () => chart.dispose();
   }, []);
 
-  return <div ref={chartRef} className=" min-h-96"></div>;
+  return <div ref={chartRef} className="w-full h-full"></div>;
 };
 
 export default FinancialChart;

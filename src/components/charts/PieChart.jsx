@@ -22,16 +22,14 @@ const PieChart = ({ data }) => {
                 formatter: '{a} <br/>{b} : {c}\n ({d}%)'
             },
             legend: {
-                bottom: 50,
                 show: false,
-                left: 'center',
                 data: ['CityA', 'CityB', 'CityD', 'CityC', 'CityE']
             },
             series: [
                 {
                     type: 'pie',
                     // radius: '70%',
-                    center: ['50%', '50%'],
+                    // center: ['50%', '50%'],
                     selectedMode: 'single',
                     label: {
                         show: true,
@@ -75,10 +73,19 @@ const PieChart = ({ data }) => {
 
         chart.setOption(option);
 
+        const resizeChart = () => chart.resize();
+        window.addEventListener('resize', resizeChart);
+    
+        return () => {
+          window.removeEventListener('resize', resizeChart);
+          chart.dispose();
+        };
+
+
         return () => chart.dispose();
     }, [data])
 
-    return <div ref={chartReference} className="w-full h-60"></div>;
+    return <div ref={chartReference} className="w-full h-full"></div>;
 }
 
 export default PieChart;
