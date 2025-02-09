@@ -1,12 +1,14 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as echarts from "echarts";
 
-const FinancialChart = () => {
+const FinancialChart = ({ data }) => {
   const chartRef = useRef(null);
+  const [windowSize, setWindowSize] = useState(window.innerWidth < 600);
+  // this will be true only when there is less than 768px md devices.
 
   useEffect(() => {
     const chart = echarts.init(chartRef.current);
-    // console.log(chartRef.current)
+
 
     const option = {
       grid: { left: "0%", right: "0%", bottom: "0%", containLabel: true },
@@ -27,17 +29,17 @@ const FinancialChart = () => {
           name: "Previous Month",
           type: "bar",
           data: [15, 18, 22, 20, 28, 35, 32, 30, 33, 40, 45, 48],
-          barWidth: 15,
           color: "#93C5FD", // Light blue bars
           itemStyle: { borderRadius: [4, 4, 0, 0] },
+          barWidth: windowSize ? 8 : 17
         },
         {
           name: "Current Month",
           type: "bar",
           data: [18, 22, 20, 28, 35, 32, 30, 33, 40, 45, 48, 50],
-          barWidth: 15,
           color: "#3B82F6", // Dark blue bars
           itemStyle: { borderRadius: [4, 4, 0, 0] },
+          barWidth: windowSize ? 8 : 17
         },
       ],
     };
@@ -52,8 +54,16 @@ const FinancialChart = () => {
       chart.dispose();
     };
 
-    return () => chart.dispose();
-  }, []);
+    const windowChange = () => {
+      if (window.innerWidth < 600) {
+        setWindowSize(true);
+      }
+      else {
+        setWindowSize(window.innerWidth > 600);
+      }
+    }
+    return () => { chart.dispose(); window.removeEventListener('resize', windowChange); }
+  }, [windowSize]);
 
   return <div ref={chartRef} className="w-full h-full"></div>;
 };

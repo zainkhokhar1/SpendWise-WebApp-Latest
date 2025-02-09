@@ -87,7 +87,7 @@ const Siderbar = () => {
                 <div className='flex group items-center pl-2 h-full pt-1 border border-transparent border-t-slate-200 w-full cursor-pointer hover:bg-slate-100 duration-200 '>
 
                     <div className='w-10 pt-[2px]'>
-                        <img class="inline-block size-9 rounded-full ring-2 ring-white" src="https://img.freepik.com/premium-photo/3d-avatar-boy-character_914455-603.jpg" alt="" />
+                        <img className="inline-block size-9 rounded-full ring-2 ring-white" src="https://img.freepik.com/premium-photo/3d-avatar-boy-character_914455-603.jpg" alt="" />
                     </div>
                     <div className='flex items-start flex-col pl-2 pt-1'>
                         <span className='text-[14px] line-clamp-1 w-28'>

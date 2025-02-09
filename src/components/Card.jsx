@@ -3,9 +3,30 @@ import React from 'react'
 import { PiWallet } from "react-icons/pi";
 import CardChart from './charts/CardChart';
 
-const Card = () => {
+
+const Card = ({ data, index }) => {
+
+    // function to check for the increase in the trend or decrease in the trend
+    // const increasing = [];
+    // const Increasing = data.map((singleData, index) => {
+    //     let values = singleData?.series?.data;
+    //     return values.map((oneValue, index) => {
+    //         if (values[values?.length - 2] < values[values?.length - 1]) {
+    //             return true;
+    //         }
+    //     })
+    // });
+    const Increasing = data.map((singleData) => {
+        let values = singleData?.series?.data;
+        // Ensure there are at least two values to compare
+        if (values && values.length > 1) {
+            return values[values.length - 2] < values[values.length - 1]; // Check if last value is greater than the second last
+        }
+        return false;
+    });
+
     return (
-        <div className=' flex justify-baseline h-32 pl-4 py-[3px] bg-white max-[1330px]:col-span-6 max-[840px]:col-span-6 min-lg:col-span-2 col-span-6 rounded-md hover:shadow shadow-gray-100 duration-200 cursor-pointer'>
+        <div className=' flex justify-baseline h-32 pl-4 py-[3px] bg-white min-[850px]:col-span-2 max-[800px]:col-span-6 max-md:col-span-6 col-span-6 rounded-md hover:shadow shadow-gray-100 duration-200 cursor-pointer'>
 
             <div className='w-1/2 flex flex-col h-full justify-between py-2 '>
 
@@ -25,8 +46,8 @@ const Card = () => {
             </div>
 
             {/* graph showing section  */}
-            <section className='w-full min-h-32 pt-16'>
-                <CardChart />
+            <section className='w-full min-h-32 pt-14'>
+                <CardChart data={data} index={index} isIncrease={Increasing} />
             </section>
 
         </div>

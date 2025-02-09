@@ -8,6 +8,8 @@ import PieComponentButton from '../components/PieComponentButton';
 import { incomePieData, expensePieData } from '../charts.data';
 import { IoMdInformationCircleOutline } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
+import { cardData1, cardData2, cardData3 } from '../charts.data.js'
+
 
 const Dashboard = () => {
   const [isEpense, setIsExpense] = useState(false);
@@ -15,35 +17,39 @@ const Dashboard = () => {
   const [option, setOption] = useState('This month');
   const [showBarExpense, setShowBarExpense] = useState(false);
 
-  console.log(showOptions)
+  const data = [...cardData1, ...cardData2, ...cardData3];
+
   return (
-    <div className='w-full bg-[#F9FBFC] pl-8 md:ml-52 pr-7 max-lg:pl-2 max-lg:pr-2 max-[350px]:pl-1 max-[350px]:pr-1 z-50'>
+    <div className='w-full bg-[#F9FBFC] pl-8 md:ml-52 pr-7 max-lg:pl-2 max-lg:pr-2 max-[350px]:pl-1 max-[350px]:pr-1 '>
       <Navbar />
 
       <div className='grid grid-cols-6 w-full lg:gap-7'>
 
         {/* cards section */}
         <section className='col-span-6 grid grid-cols-6 gap-4 h-fit'>
-          <Card />
-          <Card />
-          <Card />
+          {
+            data.map((oneData, key) => <Card key={key} data={data} index={key} />)
+          }
         </section>
 
         {/* financial insights section (bar chart) */}
         <section className='col-span-6 px-5 h-72 mt-7 lg:mt-0 lg:h-80 lg:col-span-4 '>
 
           {/* for the options of the chart */}
-          <div className='flex items-center justify-between h-fit overflow-hidden'>
+          <div className='flex flex-col md:flex-row items-center justify-between h-fit'>
+
             {/* first div */}
             <div className='flex items-center gap-1'>
-              <span className='font-semibold'>
+              <span className='font-semibold text-nowrap my-5 sm:my-0'>
                 Financial Insights
               </span>
               {/* icon */}
               <IoMdInformationCircleOutline className='mt-[1px] text-slate-400' />
             </div>
+
             {/* 2nd div */}
             <div className='flex items-center gap-3'>
+
               <div className='flex items-center gap-1 cursor-pointer' onClick={(() => { setShowBarExpense(false); })}>
                 <span className={`${showBarExpense ? "bg-gray-300" : "bg-blue-600"} rounded-full w-[5px] h-[5px]`}></span>
                 <span>
@@ -56,20 +62,22 @@ const Dashboard = () => {
                   Expense
                 </span>
               </div>
+
               {/* drop down here */}
               <div className='px-0 py-[2.6px] rounded-md w-[120px] flex justify-center bg-[#dcdce7] hover:bg-[#d6d6db] cursor-pointer group relative' onClick={() => setShowOptions(true)} >
 
-                <div className='flex items-center justify-between px-1 gap-1 min-w-[113px] bg-white hover:bg-gray-50 text-[13.7px] pb-[2px]'>
+                <div className='flex items-center justify-between px-1 gap-1 min-w-[113px] bg-white hover:bg-gray-50 text-[13.7px] pb-[2px] '>
                   <span>
                     {
                       option
                     }
                   </span>
                   <IoIosArrowDown className='text-slate-500 group-hover:text-slate-700 duration-200 mt-1' />
+
                 </div>
 
                 {/* absolute div to show the selection option to the user */}
-                <div className={`absolute z-[999] ${showOptions ? "top-7 z-50 left-3" : "hidden"} w-[120px] h-fit flex flex-col bg-white border border-slate-200 rounded-md`} onClick={(e) => {
+                <div className={`absolute z-[999] ${showOptions ? "top-7 left-0" : "hidden"} w-[120px] h-fit flex flex-col bg-white border border-slate-200 rounded-sm`} onClick={(e) => {
                   e.stopPropagation();
                   setShowOptions(false);
                 }}>
@@ -83,8 +91,8 @@ const Dashboard = () => {
                   <div className='text-nowrap hover:bg-slate-50 duration-300 ease-in-out cursor-pointer pt-1 pb-1 px-[6px] text-[14px]' onClick={() => { setOption('Last 1 year'); }}>
                     Last 1 year
                   </div>
-                </div>
 
+                </div>
               </div>
             </div>
           </div>
@@ -92,7 +100,7 @@ const Dashboard = () => {
         </section>
 
         {/* pie chart for income and expense percentage */}
-        <section className='lg:col-span-2 sm:col-span-3 col-span-6 min-[600px]:col-span-3 mt-16 xl:mt-0 h-72 min-h-60 min-w-full rounded-md bg-white'>
+        <section className='lg:col-span-2 sm:col-span-3 col-span-6 min-[600px]:col-span-3 mt-28 sm:mt-16 lg:mt-0 h-72 min-h-60 min-w-full rounded-md bg-white'>
           <PieComponentButton isEpense={isEpense} setIsExpense={setIsExpense} />
           {
             isEpense ? <PieChart data={expensePieData} /> : <PieChart data={incomePieData} />
