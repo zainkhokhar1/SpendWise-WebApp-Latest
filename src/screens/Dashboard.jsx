@@ -9,6 +9,8 @@ import { incomePieData, expensePieData } from '../charts.data';
 import { IoMdInformationCircleOutline } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
 import { cardData1, cardData2, cardData3 } from '../charts.data.js'
+import RecentTransections from '../components/RecentTransections.jsx';
+import SavingsShow from '../components/SavingsShow.jsx';
 
 
 const Dashboard = () => {
@@ -33,7 +35,7 @@ const Dashboard = () => {
         </section>
 
         {/* financial insights section (bar chart) */}
-        <section className='col-span-6 px-5 h-72 mt-7 lg:mt-0 lg:h-80 lg:col-span-4 '>
+        <section className='col-span-6 px-5 mt-7 lg:mt-0 h-96 lg:h-96 lg:pb-20 lg:col-span-4 bg-white p-2 rounded-md'>
 
           {/* for the options of the chart */}
           <div className='flex flex-col md:flex-row items-center justify-between h-fit'>
@@ -100,7 +102,7 @@ const Dashboard = () => {
         </section>
 
         {/* pie chart for income and expense percentage */}
-        <section className='lg:col-span-2 sm:col-span-3 col-span-6 min-[600px]:col-span-3 mt-28 sm:mt-16 lg:mt-0 h-72 min-h-60 min-w-full rounded-md bg-white'>
+        <section className='lg:col-span-2 sm:col-span-3 max-[900px]:min-h-[340px] sm:h-[420px] lg:h-96 col-span-6 min-[600px]:col-span-3 mt-28 sm:mt-16 lg:mt-0 min-w-full rounded-md bg-white'>
           <PieComponentButton isEpense={isEpense} setIsExpense={setIsExpense} />
           {
             isEpense ? <PieChart data={expensePieData} /> : <PieChart data={incomePieData} />
@@ -108,13 +110,13 @@ const Dashboard = () => {
         </section>
 
         {/* recent transactions */}
-        <section className='col-span-4'>
-
+        <section className='sm:col-span-6 lg:col-span-4 col-span-6 mt-14 xl:mt-4 xl:pt-5 bg-white rounded-md sm:order-5 lg:order-1'>
+          <RecentTransections />
         </section>
 
         {/* Saving show in percent  */}
-        <section className='col-span-2'>
-
+        <section className='col-span-6 sm:col-span-3 lg:col-span-2 lg:mt-4 bg-white rounded-md mt-4 h-fit sm:h-[420px] sm:mt-16 sm:ml-2 lg:order-1'>
+          <SavingsShow />
         </section>
 
       </div >

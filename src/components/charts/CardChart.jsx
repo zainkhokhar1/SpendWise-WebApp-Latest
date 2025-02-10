@@ -67,13 +67,7 @@ const CardChart = ({ data, index, isIncrease }) => {
     }, []);
 
     return <div ref={cardChartRef} className='w-full h-full relative'>
-        {
-            isIncrease ? <span className='absolute -top-3'>
-                
-            </span> : <span>
-
-            </span>
-        }
+        
     </div>;
 }
 

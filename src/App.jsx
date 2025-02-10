@@ -6,7 +6,7 @@ import Dashboard from "./screens/Dashboard";
 function App() {
 
   return (
-    <div className="w-screen h-screen overflow-x-hidden flex">
+    <div className="w-screen bg-[#F9FBFC] h-screen overflow-x-hidden flex">
       <Siderbar />
       <Dashboard />
 
