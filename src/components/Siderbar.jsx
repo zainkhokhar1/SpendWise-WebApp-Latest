@@ -44,9 +44,9 @@ const Siderbar = () => {
     ]
 
     return (
-        <div className='shadow-xl shadow-gray-200 h-screen min-md:flex md:fixed flex-col pt-6 min-w-52 max-w-52 overflow-hidden items-center justify-between fixed left-0 top-0 -translate-x-full z-[999] md:translate-x-0 '>
+        <div className='shadow-xl shadow-gray-200 h-screen min-[800px]:flex min-[800px]:fixed flex-col pt-6 min-w-52 max-w-52 overflow-hidden items-center justify-between hidden left-0 top-0 -translate-x-full z-[999] md:translate-x-0 '>
 
-            <div>
+            <div className='w-full px-2'>
                 {/* for title and logo */}
                 <div className='flex items-center gap-2 pl-3 cursor-pointer'>
                     <IoLogoAmplify className='text-xl' />

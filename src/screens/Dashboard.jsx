@@ -22,7 +22,7 @@ const Dashboard = () => {
   const data = [...cardData1, ...cardData2, ...cardData3];
 
   return (
-    <div className='w-full bg-[#F9FBFC] pl-8 md:ml-52 pr-7 max-lg:pl-2 max-lg:pr-2 max-[350px]:pl-1 max-[350px]:pr-1 '>
+    <div className='w-full bg-[#F9FBFC] min-[800px]:pl-8 min-[800px]:ml-52 pr-7 pl-2 min-[800px]:pr-2 min-[350px]:pl-1 max-[350px]:pr-1 '>
       <Navbar />
 
       <div className='grid grid-cols-6 w-full lg:gap-7'>
@@ -35,7 +35,7 @@ const Dashboard = () => {
         </section>
 
         {/* financial insights section (bar chart) */}
-        <section className='col-span-6 px-5 mt-7 lg:mt-0 h-96 lg:h-96 lg:pb-20 lg:col-span-4 bg-white p-2 rounded-md'>
+        <section className='col-span-6 px-5 mt-7 xl:mt-0 h-96 xl:h-96 xl:pb-20 xl:col-span-4 bg-white p-2 rounded-md'>
 
           {/* for the options of the chart */}
           <div className='flex flex-col md:flex-row items-center justify-between h-fit'>
@@ -102,7 +102,7 @@ const Dashboard = () => {
         </section>
 
         {/* pie chart for income and expense percentage */}
-        <section className='lg:col-span-2 sm:col-span-3 max-[900px]:min-h-[340px] sm:h-[420px] lg:h-96 col-span-6 min-[600px]:col-span-3 mt-28 sm:mt-16 lg:mt-0 min-w-full rounded-md bg-white'>
+        <section className='xl:col-span-2 min-[640px]:col-span-3 max-[900px]:min-h-[340px] sm:h-[420px] xl:h-96 col-span-6 mt-28 sm:mt-16 lg:mt-4 xl:mt-0 min-w-full rounded-md bg-white'>
           <PieComponentButton isEpense={isEpense} setIsExpense={setIsExpense} />
           {
             isEpense ? <PieChart data={expensePieData} /> : <PieChart data={incomePieData} />
@@ -110,12 +110,12 @@ const Dashboard = () => {
         </section>
 
         {/* recent transactions */}
-        <section className='sm:col-span-6 lg:col-span-4 col-span-6 mt-14 xl:mt-4 xl:pt-5 bg-white rounded-md sm:order-5 lg:order-1'>
+        <section className='sm:col-span-6 xl:col-span-4 col-span-6 mt-14 xl:mt-4 xl:pt-5 bg-white rounded-md sm:order-5 xl:order-1 min-[640px]:order-3'>
           <RecentTransections />
         </section>
 
         {/* Saving show in percent  */}
-        <section className='col-span-6 sm:col-span-3 lg:col-span-2 lg:mt-4 bg-white rounded-md mt-4 h-fit sm:h-[420px] sm:mt-16 sm:ml-2 lg:order-1'>
+        <section className='col-span-6 min-[640px]:col-span-3 xl:col-span-2 lg:mt-4 bg-white rounded-md mt-4 h-fit sm:h-[420px] sm:mt-16 sm:ml-2 xl:order-1 xl:h-[420px] min-[640px]:order-2'>
           <SavingsShow />
         </section>
 

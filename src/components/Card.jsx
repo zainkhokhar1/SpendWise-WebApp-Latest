@@ -36,8 +36,6 @@ const Card = ({ data, index }) => {
         return null; // Return null for invalid or empty data
     });
 
-    console.log(Increasing);
-
 
     return (
         <div className=' flex justify-baseline h-32 pl-4 py-[3px] bg-white relative min-[850px]:col-span-2 max-[800px]:col-span-6 max-md:col-span-6 col-span-6 rounded-md hover:shadow shadow-gray-100 duration-200 cursor-pointer'>

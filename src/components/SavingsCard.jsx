@@ -5,6 +5,7 @@ import { GiGraduateCap } from "react-icons/gi";
 const SavingsCard = () => {
     return (
         <div className='flex p-4 h-22 mb-2'>
+            
             {/* img container */}
             <div className='w-14 h-full bg-slate-100 flex items-center justify-center rounded-md'>
                 <GiGraduateCap className='w-12 h-14 text-green-500'/>

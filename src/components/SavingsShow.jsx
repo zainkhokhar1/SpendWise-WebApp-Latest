@@ -5,11 +5,12 @@ import { IoMdInformationCircleOutline } from 'react-icons/io';
 import SavingsCard from './SavingsCard';
 
 const SavingsShow = () => {
+
     return (
         <div className='py-4'>
 
             {/* Navbar */}
-            <section className='flex justify-between items-center px-2'>
+            <section className='flex justify-between items-center px-2 '>
                 <span className='flex items-center gap-1'>
                     <h3 className='font-semibold text-nowrap text-lg my-5 sm:my-0 lg:pl-3'>
                         Savings
@@ -21,7 +22,8 @@ const SavingsShow = () => {
             </section>
 
             {/* cards showing section */}
-            <section className='flex flex-col'>
+            <section className='flex flex-col overflow-y-auto h-92'>
+                <SavingsCard />
                 <SavingsCard />
                 <SavingsCard />
                 <SavingsCard />

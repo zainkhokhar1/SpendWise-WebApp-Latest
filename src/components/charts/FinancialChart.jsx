@@ -4,7 +4,8 @@ import * as echarts from "echarts";
 const FinancialChart = ({ data }) => {
   const chartRef = useRef(null);
   const [windowSize, setWindowSize] = useState(window.innerWidth < 600);
-  // this will be true only when there is less than 768px md devices.
+  // this will be true only when there is less than 600px md devices.
+
 
   useEffect(() => {
     const chart = echarts.init(chartRef.current);
@@ -46,24 +47,23 @@ const FinancialChart = ({ data }) => {
 
     chart.setOption(option);
 
-    const resizeChart = () => chart.resize();
-    window.addEventListener('resize', resizeChart);
-
-    return () => {
-      window.removeEventListener('resize', resizeChart);
-      chart.dispose();
-    };
-
     const windowChange = () => {
       if (window.innerWidth < 600) {
         setWindowSize(true);
+        resizeChart();
       }
       else {
-        setWindowSize(window.innerWidth > 600);
+        setWindowSize(false);
+        resizeChart();
       }
     }
+
+    const resizeChart = () => chart.resize();
+    window.addEventListener('resize', windowChange);
+
     return () => { chart.dispose(); window.removeEventListener('resize', windowChange); }
   }, [windowSize]);
+
 
   return <div ref={chartRef} className="w-full h-full"></div>;
 };
