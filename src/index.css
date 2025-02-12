@@ -11,11 +11,12 @@
 }
 
 ::-webkit-scrollbar{
+  background-color: rgb(255, 255, 255);
   width: 5px;
-  background-color:darkolivegreen ;
 }
 
-/* 
-*,body{
-  font-family: "Inter", serif;
-} */
+::-webkit-scrollbar-thumb{
+  width: 5px;
+  background-color:rgba(164, 119, 247, 0.452);
+  border-radius: 100px;
+}

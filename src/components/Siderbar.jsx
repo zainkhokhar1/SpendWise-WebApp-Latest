@@ -11,6 +11,7 @@ import { IoNotificationsOutline } from "react-icons/io5";
 import { IoAlertCircleOutline } from "react-icons/io5";
 import { IoSettingsOutline } from "react-icons/io5";
 import { IoIosArrowForward } from "react-icons/io";
+import { Link } from 'react-router-dom';
 
 const Siderbar = () => {
     const [selected, setSelected] = useState(1);
@@ -48,12 +49,12 @@ const Siderbar = () => {
 
             <div className='w-full px-2'>
                 {/* for title and logo */}
-                <div className='flex items-center gap-2 pl-3 cursor-pointer'>
+                <Link to={'/'} className='flex items-center gap-2 pl-3 cursor-pointer'>
                     <IoLogoAmplify className='text-xl' />
                     <span className='text-2xl font-semibold '>
                         SpendWise
                     </span>
-                </div>
+                </Link>
                 {/* Navigate buttons div */}
                 <div className='mt-8 space-y-3'>
                     {
@@ -67,24 +68,24 @@ const Siderbar = () => {
             <footer className=' h-40 flex flex-col items-start pt-2 w-full'>
 
                 <div className='hover:bg-gray-100 shadow-purple-50 hover:shadow w-full opacity-70 hover:opacity-100 duration-200'>
-                    <button className='flex items-center w-full pl-6 py-2 gap-2 text-slate-800 hover:text-slate-950 cursor-pointer'>
+                    <Link to={'/help-center'} className='flex items-center w-full pl-6 py-2 gap-2 text-slate-800 hover:text-slate-950 cursor-pointer'>
                         <IoAlertCircleOutline className='text-lg' />
                         <span className='text-md'>
                             Help
                         </span>
-                    </button>
+                    </Link>
                 </div>
 
-                <div className='hover:bg-gray-100 shadow-purple-50 hover:shadow w-full opacity-80 hover:opacity-100'>
+                <Link to={'/settings'} className='hover:bg-gray-100 shadow-purple-50 hover:shadow w-full opacity-80 hover:opacity-100'>
                     <button className='flex items-center gap-2 pl-6 py-2 text-slate-800 duration-200 hover:text-slate-950 cursor-pointer '>
                         <IoSettingsOutline className='text-lg' />
                         <span className='text-md'>
                             Settings
                         </span>
                     </button>
-                </div>
+                </Link>
 
-                <div className='flex group items-center pl-2 h-full pt-1 border border-transparent border-t-slate-200 w-full cursor-pointer hover:bg-slate-100 duration-200 '>
+                <Link to={'/my-profile'} className='flex group items-center pl-2 h-full pt-1 border border-transparent border-t-slate-200 w-full cursor-pointer hover:bg-slate-100 duration-200 '>
 
                     <div className='w-10 pt-[2px]'>
                         <img className="inline-block size-9 rounded-full ring-2 ring-white" src="https://img.freepik.com/premium-photo/3d-avatar-boy-character_914455-603.jpg" alt="" />
@@ -98,7 +99,7 @@ const Siderbar = () => {
                         </span>
                     </div>
                     <IoIosArrowForward className='text-xl ml-4 text-slate-400 group-hover:text-slate-600 duration-300'/>
-                </div>
+                </Link>
             </footer>
         </div>
     )

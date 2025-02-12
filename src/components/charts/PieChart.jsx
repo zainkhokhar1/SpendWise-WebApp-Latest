@@ -82,7 +82,6 @@ const PieChart = ({ data }) => {
         };
 
 
-        return () => chart.dispose();
     }, [data])
 
     return <div ref={chartReference} className="w-full h-full"></div>;

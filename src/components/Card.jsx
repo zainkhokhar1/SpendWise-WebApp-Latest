@@ -48,10 +48,17 @@ const Card = ({ data, index }) => {
 
                 <span>
                     <h3 className='text-slate-500 max-lg:text-sm hover:text-slate-700 cursor-pointer duration-100 font-semibold'>
-                        Total Balance
+                        {
+                            data[index].title
+                        }
                     </h3>
-                    <span className='text-2xl max-lg:text-lg font-semibold'>
-                        $30,192.98
+                    <span className='text-xl max-lg:text-lg font-semibold'>
+                        <span className='text-sm'>
+                        PKR &nbsp;
+                        </span>
+                        {
+                            data[index].Amount
+                        }
                     </span>
                 </span>
 
@@ -70,7 +77,7 @@ const Card = ({ data, index }) => {
                         }%
                     </span>
                 </span> : <span className='absolute top-5 right-14 flex items-center gap-1 text-[#a31925]'>
-                    <FaArrowDown className='order-2 text-sm'/>
+                    <FaArrowDown className='order-2 text-sm' />
                     <span className="order-1 font-medium">
                         -{
                             Increasing[index]?.percentage.toString().slice(0, 2)

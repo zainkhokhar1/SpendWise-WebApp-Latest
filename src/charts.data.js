@@ -65,10 +65,12 @@ export const cardData2 = [
             data: ['Jan', 'Feb', 'Mar']
         },
         series: {
-            data: [20,60,80],
+            data: [20, 60, 80],
             lineColor: 'rgba(132, 135, 193, 1)',
             areaColor: 'rgba(132, 135, 193, 0.34)',
-        }
+        },
+        title: 'Total Budget',
+        Amount : 3500,
     }
 ]
 
@@ -78,11 +80,13 @@ export const cardData1 = [
             data: ['Jan', 'Feb', 'Mar']
         },
         series: {
-            data: [40,200,100],
+            data: [40, 200, 100],
             lineColor: 'rgba(20, 195, 36, 1)',
             areaColor: 'rgba(20, 213, 38, 0.48)',
-        }
-    }
+        },
+        title: 'Total Income',
+        Amount : 4000,
+    },
 ]
 
 export const cardData3 = [
@@ -91,9 +95,11 @@ export const cardData3 = [
             data: ['Jan', 'Feb', 'Mar'],
         },
         series: {
-            data: [40,60,30],
+            data: [40, 60, 30],
             lineColor: 'rgba(132, 2, 77, 1)',
             areaColor: 'rgba(132, 2, 77, 0.38)',
-        }
-    }
+        },
+        title: 'Total Expense',
+        Amount : 2800,
+    },
 ]
