@@ -21,6 +21,7 @@ const Dashboard = () => {
 
   const data = [...cardData1, ...cardData2, ...cardData3];
 
+  console.log(data);
   return (
     <div className='w-full bg-[#F9FBFC] mt-24 min-[800px]:mt-0 min-[800px]:pl-8 pr-7 pl-2 min-[800px]:pr-2 min-[350px]:pl-1 max-[350px]:pr-1 '>
       <Navbar />
@@ -30,7 +31,7 @@ const Dashboard = () => {
         {/* cards section */}
         <section className='col-span-6 grid grid-cols-6 gap-4 h-fit'>
           {
-            data.map((oneData, key) => <Card key={key} data={data} index={key} />)
+           data.length > 0 && data.map((oneData, key) => <Card key={key} data={data} index={key} />)
           }
         </section>
 

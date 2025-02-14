@@ -52,13 +52,15 @@ const Card = ({ data, index }) => {
                             data[index].title
                         }
                     </h3>
-                    <span className='text-xl max-lg:text-lg font-semibold'>
+                    <span className='text-xl max-lg:text-lg'>
                         <span className='text-sm'>
-                        PKR &nbsp;
+                            PKR &nbsp;
                         </span>
-                        {
-                            data[index].Amount
-                        }
+                        <span className='oldstyle-nums text-2xl'>
+                            {
+                                data[index].Amount
+                            }
+                        </span>
                     </span>
                 </span>
 
