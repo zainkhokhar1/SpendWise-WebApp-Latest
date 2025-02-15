@@ -4,16 +4,16 @@ import { FiSearch } from "react-icons/fi";
 import { GoBell } from "react-icons/go";
 import { FiDownload } from "react-icons/fi";
 
-const Navbar = () => {
+const Navbar = ({ highding, para }) => {
     return (
         <div className='min-w-full flex items-center justify-between py-5'>
 
             <div className='flex flex-col gap-[1px]'>
                 <span className='font-semibold md:text-xl max-[350px]:text-sm'>
-                    Good Morning, Muhammad Zain
+                    {highding}
                 </span>
                 <span className='md:text-sm text-xs text-slate-700 hover:text-slate-800 duration-100'>
-                    Welcome to your financial insights.
+                    {para}
                 </span>
             </div>
 

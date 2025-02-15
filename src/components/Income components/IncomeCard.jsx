@@ -3,13 +3,13 @@ import React from 'react'
 
 const IncomeCard = () => {
     return (
-        <div className='flex flex-col rounded-md h-36 cursor-pointer shadow-lg shadow-purple-950/5 ring ring-purple-900 duration-200 ease-in-out col-span-2 p-2 border bg-white border-purple-400 space-y-2'>
+        <div className='flex flex-col max-sm:col-span-6 justify-between py-2 rounded-md h-36 cursor-pointer shadow-lg shadow-purple-950/5 border border-purple-400 duration-200 ease-in-out col-span-2 p-2  bg-white space-y-2'>
 
             <div className='w-full space-y-1'>
                 <h1 className='text-[14px] text-purple-500 font-medium'>
                     Total Income
                 </h1>
-                <p className='text-xl font-medium text-purple-800'>
+                <p className='text-[24px] font-medium text-purple-800'>
                     Rs. 3000
                 </p>
             </div>

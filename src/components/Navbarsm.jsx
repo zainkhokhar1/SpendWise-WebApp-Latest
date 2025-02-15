@@ -22,7 +22,7 @@ const Navbarsm = () => {
       </span>
 
       {/* Hamberg menu div here */}
-      <div className={`fixed z-50 left-1/2 ${menu ? "translate-y-17" : "-translate-y-full"}  transform mt-24 h-fit -translate-x-1/2 w-full bg-white border border-slate-200 shadow transition-transform duration-700 ease-in-out flex flex-col items-center rounded-lg`} onClick={() => setShow(false)} >
+      <div className={`fixed z-50 left-1/2 ${menu ? "translate-y-17" : "-translate-y-full"}  transform mt-25 h-fit -translate-x-1/2 w-screen  bg-white border border-slate-200 shadow transition-transform duration-700 ease-in-out flex flex-col items-center rounded-lg`} onClick={() => setShow(false)} >
 
 
         <Link to={'/'} className='px-2 py-[9px] border border-transparent border-b-slate-200 w-full text-center text-[15px] font-semibold text-slate-700'>

@@ -21,10 +21,9 @@ const Dashboard = () => {
 
   const data = [...cardData1, ...cardData2, ...cardData3];
 
-  console.log(data);
   return (
     <div className='w-full bg-[#F9FBFC] mt-24 min-[800px]:mt-0 min-[800px]:pl-8 pr-7 pl-2 min-[800px]:pr-2 min-[350px]:pl-1 max-[350px]:pr-1 '>
-      <Navbar />
+      <Navbar highding={'Good Morning, Muhammad Zain'} para={'Welcome to your financial insights.'}/>
 
       <div className='grid grid-cols-6 w-full lg:gap-7'>
 
