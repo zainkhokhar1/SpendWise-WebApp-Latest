@@ -1,9 +1,10 @@
 
 import React from 'react'
 
-const IncomeCard = () => {
+const IncomeCard = ({isBudget}) => {
+    console.log(isBudget)
     return (
-        <div className='flex flex-col max-sm:col-span-6 justify-between py-2 rounded-md h-36 cursor-pointer shadow-lg shadow-purple-950/5 border border-purple-400 duration-200 ease-in-out col-span-2 p-2  bg-white space-y-2'>
+        <div className={`flex flex-col ${isBudget ? 'col-span-2' : 'max-sm:col-span-6 col-span-2'} justify-between py-2 rounded-md h-36 cursor-pointer shadow-lg shadow-purple-950/5 border border-purple-400 duration-200 ease-in-out  p-2  bg-white space-y-2`}>
 
             <div className='w-full space-y-1'>
                 <h1 className='text-[14px] text-purple-500 font-medium'>

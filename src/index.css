@@ -1,20 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 @theme {
-  --font-display: "Oswald", "sans-serif"; 
+  --font-display: "Oswald", "sans-serif";
 }
+
 @import "tailwindcss";
 
-*,body{
+*,
+body {
   outline: none;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   background-color: rgb(255, 255, 255);
   width: 5px;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   width: 5px;
-  background-color:rgba(164, 119, 247, 0.452);
+  background-color: rgba(164, 119, 247, 0.452);
   border-radius: 100px;
 }
+
